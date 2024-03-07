@@ -125,6 +125,9 @@ export function QuantumBoard() {
                     <Nav.Link onClick={toggleModal}>Instructions</Nav.Link>
                     <Nav.Link>Quantum Background</Nav.Link>
                 </Nav>
+                <Nav>
+                    <Nav.Link href="https://github.com/incognitofox/quantum-chess" target='_blank'>Source</Nav.Link>
+                </Nav>
             </Navbar>
             <Container className='mt-5' md={4}>
                 <Row>
