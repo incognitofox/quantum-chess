@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Quantum Chess
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### William Wang
+### Winter 2024
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+For my final project, I have created QuantumChess, a brand new spin on chess that incorporates QIS principles. The educational aim of the game is to teach people to think about measurement and entanglement in the context of chess.
 
-### `npm start`
+## Game Rules
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The game works like normal chess, except each player controls two boards, which are “entangled”. Each turn, a player will make a move on the board they have not most recently played on. When a player captures a piece, this is a “measurement” of that pieces location, and the corresponding piece on the other board, the “entangled state”, also disappears.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Learning Objectives
 
-### `npm test`
+The learning objective of this project is for students to understand two things:
+The collapse of a quantum superposition upon measurement. In the context of the game, this is represented by the capturing of pieces.
+Quantum entanglement. Here, when we measure one piece by capturing it, the corresponding entangled pair on the second board is also captured.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Defining the User
 
-### `npm run build`
+The intended audience is novice non-technical learners. Specifically, children around middle school age who are looking to get started thinking computationally in a quantum manner. Playing the game requires background knowledge of the basic rules of chess.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Bryan Zhang from Sunnyvale, CA
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Bryan Zhang is a rising 6th grader from Sunnyvale, CA. He is interested in computer programming and would like to explore emerging fields. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Malcolm Rogers from Sunnyvale, CA
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Malcolm Rogers is a double amputee from Ann Arbor Michigan. He lost his arms in a tragic hockey accident when he was run over by a Zamboni. However, he hasn’t let that stop him from pursuing STEM.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Defining the Facilitator
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Educational Setting
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ideally this could be introduced as a chess variant, taught at chess clubs around the country. Chess stimulates parts of the brain that are useful for classical computational thinking: thinking about moves in a sequential order, performing calculations, and thinking strategically. I hope to incorporate thinking about measurement and quantum entanglement as well. That way, when students go in for more advanced quantum computing topics later on in life, they are well prepared in intuitively visualizing superpositions.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
