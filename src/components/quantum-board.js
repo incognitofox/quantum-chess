@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import { Chessboard } from "react-chessboard";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
+import { Navbar, Container, Row, Col, Nav, Modal, Button } from 'react-bootstrap';
 
 import { QuantumChess } from '../game-engine.js'
 
@@ -13,7 +11,7 @@ export function QuantumBoard() {
     const [gameTwo, setGameTwo] = useState(new QuantumChess());
     const [turn, setTurn] = useState(true)
     const [gameStart, setGameStart] = useState(false);
-
+    const [show, setShow] = useState(true);
 
     useEffect(() => {
         if (gameStart) {
@@ -90,27 +88,65 @@ export function QuantumBoard() {
         return true;
     }
     
+    function handleClick() {
+        setTurn(true);
+        setGameStart(false);
+        setGameOne(new QuantumChess());
+        setGameTwo(new QuantumChess());
+    }
+
+    function toggleModal() {
+        setShow(!show);
+    }
+
     return (
-        <Container md={4}>
-            <Row>
-                <Col>
-                    <Chessboard 
-                        id="board-1" 
-                        position={gameOne.fen()} 
-                        boardWidth={500} 
-                        onPieceDrop={onDrop}
-                    />
-                </Col>
-                <Col>
-                    <Chessboard 
-                        id="board-2" 
-                        position={gameTwo.fen()} 
-                        boardWidth={500} 
-                        boardOrientation='black' 
-                        onPieceDrop={onDrop}
-                    />
-                </Col>
-            </Row>
-        </Container>
+        <>
+            <Modal show={show} onHide={toggleModal}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Instructions</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    Welcome to QuantumChess! This works exactly like regular chess with the following modifications:
+                    <ol>
+                        <li>You control two boards, and alternate making moves on each board, starting with the right board.</li>
+                        <li>When you capture a piece, the corresponding piece on the other board is also captured.</li>
+                    </ol>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={toggleModal}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+            <Navbar bg="dark" data-bs-theme="dark">
+                <Nav className="me-auto" >
+                    <Nav.Link onClick={handleClick}>New Game</Nav.Link>
+                    <Nav.Link onClick={toggleModal}>Instructions</Nav.Link>
+                    <Nav.Link>Quantum Background</Nav.Link>
+                </Nav>
+            </Navbar>
+            <Container className='mt-5' md={4}>
+                <Row>
+                    <Col>  
+                        <Chessboard 
+                            id="board-1" 
+                            position={gameOne.fen()} 
+                            boardWidth={500} 
+                            onPieceDrop={onDrop}
+                        />
+                    </Col>
+                    <Col>
+                        <Chessboard 
+                            id="board-2" 
+                            position={gameTwo.fen()} 
+                            boardWidth={500} 
+                            boardOrientation='black' 
+                            onPieceDrop={onDrop}
+                        />
+                    </Col>
+                </Row>
+            </Container>
+        </>
     )
 }
